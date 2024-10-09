@@ -1,4 +1,5 @@
-from task1 import Parser,Info,Config,Connection,DatabaseObject,FilePath
+from task1 import Info,Config,Connection,DatabaseObject,FilePath
+
 
 def main():
     args = Info()

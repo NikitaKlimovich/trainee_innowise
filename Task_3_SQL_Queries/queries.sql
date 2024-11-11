@@ -12,7 +12,8 @@ from public.film f
 join public.film_actor fa using (film_id)
 join public.actor a using (actor_id)
 group by a.first_name, a.last_name
-order by rent_dur desc;
+order by rent_dur desc
+limit 10;
 
 
 -- Вывести категорию фильмов, на которую потратили больше всего денег
@@ -44,14 +45,14 @@ with actor_film_cnt as
 	where c.name = 'Children'
 	group by a.first_name, a.last_name
 )
-select first_name, last_name, film_cnt 
-from actor_film_cnt afc
-where afc.film_cnt in (
-					select afc_1.film_cnt
-					from actor_film_cnt afc_1
-					order by afc_1.film_cnt desc
-					limit 3)
-order by afc.film_cnt desc;
+select max_cnt.first_name, max_cnt.last_name, max_cnt.film_cnt 
+from
+(	select afc.first_name, afc.last_name, afc.film_cnt, dense_rank() over(order by film_cnt desc) as rnk
+	from actor_film_cnt afc
+) max_cnt
+where max_cnt.rnk<=3;
+
+
 
 -- Вывести города с количеством активных и неактивных клиентов (активный — customer.active = 1). Отсортировать по количеству неактивных клиентов по убыванию.
 with customer_city as

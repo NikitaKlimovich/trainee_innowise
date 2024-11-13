@@ -1,0 +1,27 @@
+[
+    {
+        "r_name": "Room #105",
+        "r_id": 105,
+        "avg_age": 103.0
+    },
+    {
+        "r_name": "Room #25",
+        "r_id": 25,
+        "avg_age": 98.75
+    },
+    {
+        "r_name": "Room #972",
+        "r_id": 972,
+        "avg_age": 97.0
+    },
+    {
+        "r_name": "Room #783",
+        "r_id": 783,
+        "avg_age": 91.63
+    },
+    {
+        "r_name": "Room #707",
+        "r_id": 707,
+        "avg_age": 90.67
+    }
+]

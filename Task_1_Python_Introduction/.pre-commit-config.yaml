@@ -1,0 +1,40 @@
+repos:
+- repo: local
+  
+  
+  
+  hooks:
+
+
+  - id: black
+    name: black
+    entry: black
+    language: system
+    types: [python]
+    exclude: python_intro_env/.*|main.py
+    args: [
+            --line-length=100
+        ]
+
+
+
+
+  - id: isort
+    name: isort
+    entry: isort --settings-file ./.isort.cfg .
+    language: system
+    types: [python]
+    exclude: python_intro_env/.*
+
+  
+
+
+  - id: flake8
+    name: flake8
+    entry: flake8
+    language: system
+    types: [python]
+    exclude: python_intro_env/.*
+
+
+  

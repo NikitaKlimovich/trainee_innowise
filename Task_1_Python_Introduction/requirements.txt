@@ -1,0 +1,6 @@
+mysql-connector-python
+dict2xml
+pre-commit
+black
+isort
+flake8
